@@ -34,6 +34,7 @@ const (
 	flagEnableJaegerTracing  = "enable-jaeger-tracing"
 	flagJaegerAddress        = "jaeger-address"
 	flagJaegerPort           = "jaeger-port"
+	flagJaegerVersion        = "jaeger-version"
 	flagEnableDatadogTracing = "enable-datadog-tracing"
 	flagDatadogAddress       = "datadog-address"
 	flagDatadogPort          = "datadog-port"
@@ -89,6 +90,7 @@ type Config struct {
 	EnableJaegerTracing  bool
 	JaegerAddress        string
 	JaegerPort           string
+	JaegerVersion        string
 	EnableDatadogTracing bool
 	DatadogAddress       string
 	DatadogPort          int32
@@ -161,6 +163,8 @@ func (cfg *Config) BindFlags(fs *pflag.FlagSet) {
 		"Jaeger address")
 	fs.StringVar(&cfg.JaegerPort, flagJaegerPort, "9411",
 		"Jaeger port")
+	fs.StringVar(&cfg.JaegerVersion, flagJaegerVersion, "proto",
+		"Jaeger collector endpoint version")
 	fs.BoolVar(&cfg.EnableDatadogTracing, flagEnableDatadogTracing, false,
 		"Enable Envoy Datadog tracing")
 	fs.StringVar(&cfg.DatadogAddress, flagDatadogAddress, "datadog.appmesh-system",

@@ -36,6 +36,7 @@ type envoyMutatorConfig struct {
 	enableJaegerTracing        bool
 	jaegerPort                 string
 	jaegerAddress              string
+	jaegerVersion              string
 	enableDatadogTracing       bool
 	datadogTracerPort          int32
 	datadogTracerAddress       string
@@ -139,6 +140,7 @@ func (m *envoyMutator) buildTemplateVariables(pod *corev1.Pod) EnvoyTemplateVari
 		EnableJaegerTracing:      m.mutatorConfig.enableJaegerTracing,
 		JaegerPort:               m.mutatorConfig.jaegerPort,
 		JaegerAddress:            m.mutatorConfig.jaegerAddress,
+		JaegerVersion:            m.mutatorConfig.jaegerVersion,
 		EnableDatadogTracing:     m.mutatorConfig.enableDatadogTracing,
 		DatadogTracerPort:        m.mutatorConfig.datadogTracerPort,
 		DatadogTracerAddress:     m.mutatorConfig.datadogTracerAddress,

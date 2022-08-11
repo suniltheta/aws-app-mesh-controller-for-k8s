@@ -34,6 +34,7 @@ type EnvoyTemplateVariables struct {
 	EnableJaegerTracing      bool
 	JaegerPort               string
 	JaegerAddress            string
+	JaegerVersion            string
 	EnableDatadogTracing     bool
 	DatadogTracerPort        int32
 	DatadogTracerAddress     string
@@ -158,6 +159,7 @@ func updateEnvMapForEnvoy(vars EnvoyTemplateVariables, env map[string]string, vn
 		env["ENABLE_ENVOY_JAEGER_TRACING"] = "1"
 		env["JAEGER_TRACER_PORT"] = vars.JaegerPort
 		env["JAEGER_TRACER_ADDRESS"] = vars.JaegerAddress
+		env["JAEGER_TRACER_VERSION"] = vars.JaegerVersion
 	}
 
 	env["APPMESH_PLATFORM_K8S_VERSION"] = vars.K8sVersion

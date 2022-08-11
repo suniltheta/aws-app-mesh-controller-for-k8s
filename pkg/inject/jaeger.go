@@ -74,6 +74,7 @@ type JaegerInitContainerTemplateVariables struct {
 type jaegerMutatorConfig struct {
 	jaegerAddress string
 	jaegerPort    string
+	jaegerVersion string
 }
 
 func newJaegerMutator(mutatorConfig jaegerMutatorConfig, enabled bool) *jaegerMutator {

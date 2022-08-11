@@ -631,6 +631,7 @@ func Test_envoyMutator_mutate(t *testing.T) {
 					enableJaegerTracing:        true,
 					jaegerPort:                 "8000",
 					jaegerAddress:              "localhost",
+					jaegerVersion:              "json",
 					controllerVersion:          "v1.4.1",
 					k8sVersion:                 "v1.20.1-eks-fdsedv",
 				},
@@ -711,6 +712,10 @@ func Test_envoyMutator_mutate(t *testing.T) {
 								{
 									Name:  "JAEGER_TRACER_ADDRESS",
 									Value: "localhost",
+								},
+								{
+									Name:  "JAEGER_TRACER_VERSION",
+									Value: "json",
 								},
 								{
 									Name:  "AWS_REGION",

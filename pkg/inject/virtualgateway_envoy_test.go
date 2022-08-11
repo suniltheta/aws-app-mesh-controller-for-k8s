@@ -1053,6 +1053,7 @@ func Test_virtualGatewayEnvoyMutator_mutate(t *testing.T) {
 					enableJaegerTracing:        true,
 					jaegerPort:                 "80",
 					jaegerAddress:              "jaeger-collector.system",
+					jaegerVersion:              "json",
 					readinessProbeInitialDelay: 1,
 					readinessProbePeriod:       10,
 					enableDatadogTracing:       false,
@@ -1110,6 +1111,10 @@ func Test_virtualGatewayEnvoyMutator_mutate(t *testing.T) {
 								{
 									Name:  "JAEGER_TRACER_ADDRESS",
 									Value: "jaeger-collector.system",
+								},
+								{
+									Name:  "JAEGER_TRACER_VERSION",
+									Value: "json",
 								},
 								{
 									Name:  "ENABLE_ENVOY_JAEGER_TRACING",
@@ -1174,6 +1179,7 @@ func Test_virtualGatewayEnvoyMutator_mutate(t *testing.T) {
 					enableJaegerTracing:        false,
 					jaegerPort:                 "80",
 					jaegerAddress:              "jaeger-collector.system",
+					jaegerVersion:              "json",
 					readinessProbeInitialDelay: 1,
 					readinessProbePeriod:       10,
 					enableDatadogTracing:       false,
@@ -1300,6 +1306,7 @@ func Test_virtualGatewayEnvoyMutator_mutate(t *testing.T) {
 					enableJaegerTracing:        false,
 					jaegerPort:                 "80",
 					jaegerAddress:              "jaeger-collector.system",
+					jaegerVersion:              "json",
 					readinessProbeInitialDelay: 1,
 					readinessProbePeriod:       10,
 					enableDatadogTracing:       true,

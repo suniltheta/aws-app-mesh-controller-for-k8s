@@ -405,6 +405,7 @@ Parameter | Description | Default
 `tracing.provider` |  The tracing provider can be x-ray, jaeger or datadog | `x-ray`
 `tracing.address` |  Jaeger or Datadog agent server address (ignored for X-Ray) | `appmesh-jaeger.appmesh-system`
 `tracing.port` |  Jaeger or Datadog agent port (ignored for X-Ray) | `9411`
+`tracing.version` | The encoding format of the traces emitted towards Jaeger or OpenTelemetry collector. Set this value as `json` to override the default value `proto` (ignored for X-Ray) | `proto`
 `tracing.samplingRate` | X-Ray tracer sampling rate. Value can be a decimal number between 0 and 1.00 (100%)  | `0.05`
 `tracing.logLevel` | X-Ray agent log level, from most verbose to least: dev, debug, info, prod(default), warn, error. | `prod`
 `tracing.role` | X-Ray agent assume the specified IAM role to upload segments to a different account  | `None`

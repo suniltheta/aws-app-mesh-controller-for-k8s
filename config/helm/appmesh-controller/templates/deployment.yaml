@@ -99,6 +99,7 @@ spec:
         - --enable-jaeger-tracing=true
         - --jaeger-address={{ .Values.tracing.address }}
         - --jaeger-port={{ .Values.tracing.port }}
+        - --jaeger-version={{ .Values.tracing.version }}
         {{- end }}
         {{- if and .Values.tracing.enabled ( eq .Values.tracing.provider "datadog" ) }}
         - --enable-datadog-tracing=true

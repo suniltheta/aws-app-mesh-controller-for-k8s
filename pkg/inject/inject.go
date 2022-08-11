@@ -187,6 +187,7 @@ func (m *SidecarInjector) injectAppMeshPatches(ms *appmesh.Mesh, vn *appmesh.Vir
 			enableJaegerTracing:        m.config.EnableJaegerTracing,
 			jaegerPort:                 m.config.JaegerPort,
 			jaegerAddress:              m.config.JaegerAddress,
+			jaegerVersion:              m.config.JaegerVersion,
 			enableDatadogTracing:       m.config.EnableDatadogTracing,
 			datadogTracerPort:          m.config.DatadogPort,
 			datadogTracerAddress:       m.config.DatadogAddress,
@@ -214,6 +215,7 @@ func (m *SidecarInjector) injectAppMeshPatches(ms *appmesh.Mesh, vn *appmesh.Vir
 			newJaegerMutator(jaegerMutatorConfig{
 				jaegerAddress: m.config.JaegerAddress,
 				jaegerPort:    m.config.JaegerPort,
+				jaegerVersion: m.config.JaegerVersion,
 			}, m.config.EnableJaegerTracing),
 		}
 	}
